@@ -1,0 +1,280 @@
+-------------------------------------------------------------------------------------------
+Welcome to SimBaseball. Today's game is between the Seattle Mariners (2000) and the New York Yankees (2000)
+Starting pitcher for the Seattle Mariners (2000) is Jamie Moyer (P). Starting pitcher for the New York Yankees (2000) is Andy Pettitte (P)
+-------------------------------------------------------------------------------------------
+
+Top of 1. Seattle Mariners (2000): 0 New York Yankees (2000): 0
+
+Jorge Posada (C) is up to bat.
+Jorge Posada (C) draws a walk.
+	Jorge Posada (C) reaches 1B.
+Tino Martinez (1B) is up to bat.
+Tino Martinez (1B) hits a fieldable ball to 9.
+1 outs!
+Chuck Knoblauch (2B) is up to bat.
+Chuck Knoblauch (2B) draws a walk.
+	Jorge Posada (C) advances to 2B.
+	Chuck Knoblauch (2B) reaches 1B.
+Derek Jeter (SS) is up to bat.
+Derek Jeter (SS) hits a fieldable ball to 9.
+The hit is a sac fly.
+	Jorge Posada (C) advances to 3B.
+2 outs!
+Scott Brosius (3B) is up to bat.
+Scott Brosius (3B) hits a fieldable ball to 3.
+3 outs!
+Bottom of 1. Seattle Mariners (2000): 0 New York Yankees (2000): 0
+
+Dan Wilson (C) is up to bat.
+Dan Wilson (C) strikes out.
+1 outs!
+John Olerud (1B) is up to bat.
+John Olerud (1B) draws a walk.
+	John Olerud (1B) reaches 1B.
+Mark McLemore (2B) is up to bat.
+Mark McLemore (2B) hits a single.
+	John Olerud (1B) advances to 3B.
+	Mark McLemore (2B) reaches 1B.
+Alex Rodriguez (SS) is up to bat.
+Alex Rodriguez (SS) strikes out.
+2 outs!
+David Bell (3B) is up to bat.
+David Bell (3B) hits a fieldable ball to 8.
+3 outs!
+Top of 2. Seattle Mariners (2000): 0 New York Yankees (2000): 0
+
+Ricky Ledee (LF) is up to bat.
+Ricky Ledee (LF) strikes out.
+1 outs!
+Bernie Williams (CF) is up to bat.
+Bernie Williams (CF) strikes out.
+2 outs!
+Paul O (RF) is up to bat.
+Paul O (RF) hits a fieldable ball to 7.
+3 outs!
+Bottom of 2. Seattle Mariners (2000): 0 New York Yankees (2000): 0
+
+Rickey Henderson (LF) is up to bat.
+Rickey Henderson (LF) hits a fieldable ball to 2.
+1 outs!
+Mike Cameron (CF) is up to bat.
+Mike Cameron (CF) strikes out.
+2 outs!
+Jay Buhner (RF) is up to bat.
+Jay Buhner (RF) hits a fieldable ball to 1.
+3 outs!
+Top of 3. Seattle Mariners (2000): 0 New York Yankees (2000): 0
+
+Shane Spencer (DH) is up to bat.
+Shane Spencer (DH) hits a fieldable ball to 9.
+1 outs!
+Jorge Posada (C) is up to bat.
+Jorge Posada (C) draws a walk.
+	Jorge Posada (C) reaches 1B.
+Tino Martinez (1B) is up to bat.
+Tino Martinez (1B) draws a walk.
+	Jorge Posada (C) advances to 2B.
+	Tino Martinez (1B) reaches 1B.
+Chuck Knoblauch (2B) is up to bat.
+Chuck Knoblauch (2B) hits a fieldable ball to 5.
+The infield turns a double play!
+3 outs!
+Bottom of 3. Seattle Mariners (2000): 0 New York Yankees (2000): 0
+
+Edgar Martinez (DH) is up to bat.
+Edgar Martinez (DH) hits a fieldable ball to 2.
+1 outs!
+Dan Wilson (C) is up to bat.
+Dan Wilson (C) hits a single.
+	Dan Wilson (C) reaches 1B.
+John Olerud (1B) is up to bat.
+John Olerud (1B) strikes out.
+2 outs!
+Mark McLemore (2B) is up to bat.
+Mark McLemore (2B) hits a single.
+	Dan Wilson (C) advances to 3B.
+	Mark McLemore (2B) reaches 1B.
+Alex Rodriguez (SS) is up to bat.
+Alex Rodriguez (SS) hits a single.
+	Dan Wilson (C) scores.
+	Mark McLemore (2B) advances to 3B.
+	Alex Rodriguez (SS) reaches 1B.
+David Bell (3B) is up to bat.
+David Bell (3B) strikes out.
+3 outs!
+Top of 4. Seattle Mariners (2000): 1 New York Yankees (2000): 0
+
+Derek Jeter (SS) is up to bat.
+Derek Jeter (SS) strikes out.
+1 outs!
+Scott Brosius (3B) is up to bat.
+Scott Brosius (3B) strikes out.
+2 outs!
+Ricky Ledee (LF) is up to bat.
+Ricky Ledee (LF) hits a fieldable ball to 4.
+3 outs!
+Bottom of 4. Seattle Mariners (2000): 1 New York Yankees (2000): 0
+
+Rickey Henderson (LF) is up to bat.
+Rickey Henderson (LF) hits a fieldable ball to 2.
+1 outs!
+Mike Cameron (CF) is up to bat.
+Mike Cameron (CF) draws a walk.
+	Mike Cameron (CF) reaches 1B.
+Jay Buhner (RF) is up to bat.
+Jay Buhner (RF) hits a fieldable ball to 6.
+The infield turns a double play!
+3 outs!
+Top of 5. Seattle Mariners (2000): 1 New York Yankees (2000): 0
+
+Bernie Williams (CF) is up to bat.
+Bernie Williams (CF) hits a fieldable ball to 9.
+1 outs!
+Paul O (RF) is up to bat.
+Paul O (RF) hits a fieldable ball to 5.
+David Bell (3B) commits a fielding error!
+	Paul O (RF) reaches 1B.
+Shane Spencer (DH) is up to bat.
+Shane Spencer (DH) hits a single.
+	Paul O (RF) advances to 2B.
+	Shane Spencer (DH) reaches 1B.
+Jorge Posada (C) is up to bat.
+Jorge Posada (C) hits a fieldable ball to 9.
+The hit is a sac fly.
+	Paul O (RF) advances to 3B.
+2 outs!
+Tino Martinez (1B) is up to bat.
+Tino Martinez (1B) hits a fieldable ball to 7.
+3 outs!
+Bottom of 5. Seattle Mariners (2000): 1 New York Yankees (2000): 0
+
+Edgar Martinez (DH) is up to bat.
+Edgar Martinez (DH) hits a fieldable ball to 9.
+1 outs!
+Dan Wilson (C) is up to bat.
+Dan Wilson (C) hits a single.
+	Dan Wilson (C) reaches 1B.
+John Olerud (1B) is up to bat.
+John Olerud (1B) hits a single.
+	Dan Wilson (C) advances to 2B.
+	John Olerud (1B) reaches 1B.
+Mark McLemore (2B) is up to bat.
+Mark McLemore (2B) hits a fieldable ball to 7.
+2 outs!
+Alex Rodriguez (SS) is up to bat.
+Alex Rodriguez (SS) draws a walk.
+	Dan Wilson (C) advances to 3B.
+	John Olerud (1B) advances to 2B.
+	Alex Rodriguez (SS) reaches 1B.
+David Bell (3B) is up to bat.
+David Bell (3B) hits a double.
+	Dan Wilson (C) scores.
+	John Olerud (1B) scores.
+	Alex Rodriguez (SS) advances to 3B.
+	David Bell (3B) reaches 2B.
+Rickey Henderson (LF) is up to bat.
+Rickey Henderson (LF) is hit by pitch.
+	Rickey Henderson (LF) reaches 1B.
+Mike Cameron (CF) is up to bat.
+Mike Cameron (CF) hits a single.
+	Alex Rodriguez (SS) scores.
+	David Bell (3B) scores.
+	Rickey Henderson (LF) advances to 3B.
+	Mike Cameron (CF) reaches 1B.
+Jay Buhner (RF) is up to bat.
+Jay Buhner (RF) strikes out.
+3 outs!
+Top of 6. Seattle Mariners (2000): 5 New York Yankees (2000): 0
+
+Chuck Knoblauch (2B) is up to bat.
+Chuck Knoblauch (2B) hits a fieldable ball to 6.
+1 outs!
+Derek Jeter (SS) is up to bat.
+Derek Jeter (SS) hits a home run.
+	Derek Jeter (SS) scores.
+Scott Brosius (3B) is up to bat.
+Scott Brosius (3B) hits a fieldable ball to 9.
+2 outs!
+Ricky Ledee (LF) is up to bat.
+Ricky Ledee (LF) hits a fieldable ball to 4.
+3 outs!
+Bottom of 6. Seattle Mariners (2000): 5 New York Yankees (2000): 1
+
+Pitching Substitution: Todd Erdos (P) for Andy Pettitte (P). Andy Pettitte (P) leaves the game with 103 pitches.
+Edgar Martinez (DH) is up to bat.
+Edgar Martinez (DH) hits a fieldable ball to 1.
+1 outs!
+Dan Wilson (C) is up to bat.
+Dan Wilson (C) hits a fieldable ball to 8.
+2 outs!
+John Olerud (1B) is up to bat.
+John Olerud (1B) hits a fieldable ball to 4.
+3 outs!
+Top of 7. Seattle Mariners (2000): 5 New York Yankees (2000): 1
+
+Pitching Substitution: Frankie Rodriguez (P) for Jamie Moyer (P). Jamie Moyer (P) leaves the game with 100 pitches.
+Bernie Williams (CF) is up to bat.
+Bernie Williams (CF) draws a walk.
+	Bernie Williams (CF) reaches 1B.
+Paul O (RF) is up to bat.
+Paul O (RF) hits a fieldable ball to 6.
+The infield turns a double play!
+2 outs!
+Todd Erdos (P) is up to bat.
+Todd Erdos (P) hits a fieldable ball to 8.
+3 outs!
+Bottom of 7. Seattle Mariners (2000): 5 New York Yankees (2000): 1
+
+Mark McLemore (2B) is up to bat.
+Mark McLemore (2B) hits a single.
+	Mark McLemore (2B) reaches 1B.
+Alex Rodriguez (SS) is up to bat.
+Alex Rodriguez (SS) hits a fieldable ball to 8.
+1 outs!
+David Bell (3B) is up to bat.
+David Bell (3B) hits a home run.
+	Mark McLemore (2B) scores.
+	David Bell (3B) scores.
+Rickey Henderson (LF) is up to bat.
+Rickey Henderson (LF) hits a fieldable ball to 6.
+2 outs!
+Mike Cameron (CF) is up to bat.
+Mike Cameron (CF) strikes out.
+3 outs!
+Top of 8. Seattle Mariners (2000): 7 New York Yankees (2000): 1
+
+Jorge Posada (C) is up to bat.
+Jorge Posada (C) strikes out.
+1 outs!
+Tino Martinez (1B) is up to bat.
+Tino Martinez (1B) hits a fieldable ball to 2.
+2 outs!
+Chuck Knoblauch (2B) is up to bat.
+Chuck Knoblauch (2B) hits a fieldable ball to 3.
+3 outs!
+Bottom of 8. Seattle Mariners (2000): 7 New York Yankees (2000): 1
+
+Jay Buhner (RF) is up to bat.
+Jay Buhner (RF) hits a fieldable ball to 6.
+1 outs!
+Frankie Rodriguez (P) is up to bat.
+Frankie Rodriguez (P) hits a fieldable ball to 9.
+2 outs!
+Dan Wilson (C) is up to bat.
+Dan Wilson (C) hits a fieldable ball to 8.
+3 outs!
+Top of 9. Seattle Mariners (2000): 7 New York Yankees (2000): 1
+
+Derek Jeter (SS) is up to bat.
+Derek Jeter (SS) strikes out.
+1 outs!
+Scott Brosius (3B) is up to bat.
+Scott Brosius (3B) strikes out.
+2 outs!
+Ricky Ledee (LF) is up to bat.
+Ricky Ledee (LF) hits a fieldable ball to 2.
+3 outs!
+Bottom of 9. Seattle Mariners (2000): 7 New York Yankees (2000): 1
+
+Seattle Mariners (2000) win, 7 to 1
+
