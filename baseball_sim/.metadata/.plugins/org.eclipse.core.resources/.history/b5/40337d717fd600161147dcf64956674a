@@ -252,7 +252,7 @@ public class Game {
 	private Player getCloser(Team team) {
 		double max = 0;
 		Player closer = team.bullpen.get(0);
-		for (Player p : team.bullpen) {	//팀의 불펜 배열을 돌려봐서 세이브 가장 많은 사람을 클로저로 올림
+		for (Player p : team.bullpen) {
 			if (p.SAV > max) {
 				if ((team == home && p != homeP) || (team == away && p != awayP)) {
 					max = p.SAV;

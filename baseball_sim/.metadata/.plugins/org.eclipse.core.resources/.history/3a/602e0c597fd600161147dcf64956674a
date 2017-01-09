@@ -252,7 +252,7 @@ public class Game {
 	private Player getCloser(Team team) {
 		double max = 0;
 		Player closer = team.bullpen.get(0);
-		for (Player p : team.bullpen) {	//팀의 불펜 배열을 돌려봐서 세이브 가장 많은 사람을 클로저로 올림
+		for (Player p : team.bullpen) {
 			if (p.SAV > max) {
 				if ((team == home && p != homeP) || (team == away && p != awayP)) {
 					max = p.SAV;
@@ -401,27 +401,27 @@ public class Game {
 		w.print(log);
 	}
 
-	private void increment_aSpot() {//홈팀 타순 증가
+	private void increment_aSpot() {
 		if (aSpot == 8)
 			aSpot = 0;
 		else
 			aSpot++;
 	}
-	private void increment_hSpot() {//어웨이팀 타순 증가
+	private void increment_hSpot() {
 		if (hSpot == 8)
 			hSpot = 0;
 		else
 			hSpot++;
 	}
 
-	private boolean isOn(int result) {	//사용안함
+	private boolean isOn(int result) {
 		if (result < 6)
 			return true;
 		else
 			return false;
 	}
 
-	private double adjustStat(double AVG, double OVA, double LOVA) {	//스탯보정
+	private double adjustStat(double AVG, double OVA, double LOVA) {
 		return ((AVG*OVA)/LOVA)/((((AVG*OVA)/LOVA)+((1-AVG)*(1-OVA)/(1-LOVA))));
 	}
 
