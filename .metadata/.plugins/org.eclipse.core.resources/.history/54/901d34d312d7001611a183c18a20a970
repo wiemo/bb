@@ -57,8 +57,8 @@ public class Game {
 		awayP = away.roster.get(awayInts[9]);				//어웨이투수에 투수 할당
 		buildFields();										
 
-		hRuns = aRuns = hSpot = aSpot = 0;					//양팀 점수, 타순 0으로 초기화
-		inning = 1;											//1이닝부터 시작
+		hRuns = aRuns = hSpot = aSpot = 0;
+		inning = 1;
 		
 		printLog("-------------------------------------------------------------------------------------------\n");
 		printLog("Welcome to SimBaseball. Today's game is between the "+home+" and the "+away+"\n");
@@ -67,12 +67,12 @@ public class Game {
 		
 		// outline of game structure
 		
-		Field diamond = new Field(w);						//필드 클래스 변수선언
+		Field diamond = new Field(w);
 
-		while (aRuns == hRuns || inning < 10) {					//양팀의 점수가 같거나 혹은(or) 9이닝 이하라면 계속 반복
-			printLog("Top of "+inning+". "+home+": "+hRuns+" "+away+": "+aRuns+"\n\n");	//이닝초 양 팀 점수 출력
-			checkPitcherForSub(homeP);							//투수교체 체크
-			diamond.resetField(homeField);						//
+		while (aRuns == hRuns || inning < 10) {
+			printLog("Top of "+inning+". "+home+": "+hRuns+" "+away+": "+aRuns+"\n\n");
+			checkPitcherForSub(homeP);
+			diamond.resetField(homeField);
 			while ((outsBefore = diamond.getOuts()) < 3) {
 				printLog(awayOrder[aSpot]+" is up to bat.\n");
 				aRuns += diamond.updateField(matchup(homeP, awayOrder[aSpot], calcBattingAdjustment(homeP, awayOrder[aSpot])), awayOrder[aSpot]);
@@ -216,45 +216,40 @@ public class Game {
 		return result;
 	}
 
-	private void checkPitcherForSub(Player pitcher) {	//인수로 투수를 입력받음
-		if (pitcher.pitchCount > 100 && inning < 8) {	//입력받은 투수의 투구수가 100을 넘고, 이닝이 7회 이하라면
-			if (pitcher == homeP) {						//인수로받은 투수가 홈팀 투수라면
+	private void checkPitcherForSub(Player pitcher) {
+		if (pitcher.pitchCount > 100 && inning < 8) {
+			if (pitcher == homeP) {
 				printLog("Pitching Substitution: "+home.bullpen.get(6)+" for "+homeP+". "+homeP+" leaves the game with "+((int)homeP.pitchCount)+" pitches.\n");
-														//투수교쳬 : 교체 투수 for 기존 투수 leaves the game with 투구수 pitches 출력
-				homeP = home.bullpen.get(6);			//홈팀 투수는 불펜의 6번째 투수, 1~5까지는 선발투수
-				homeOrder[homeOrder.length-1] = homeP;	//홈팀 타순에서 맨마지막 타순은 홈팀 투수, 지명타자제도 없음
-				addHomeField(homeP);					//홈팀 수비에 바뀐 투수 추가
+				homeP = home.bullpen.get(6);
+				homeOrder[homeOrder.length-1] = homeP;
+				addHomeField(homeP);
 			}
-			else {										//인수로 받은 투수가 어웨이팀 투수라면
+			else {
 				printLog("Pitching Substitution: "+away.bullpen.get(6)+" for "+awayP+". "+awayP+" leaves the game with "+((int)awayP.pitchCount)+" pitches.\n");
-														//위와 동일하나 어웨이팀 기준으로 바뀜
 				awayP = away.bullpen.get(6);
 				awayOrder[awayOrder.length-1] =  awayP;
 				addHomeField(homeP);
 			}
 		}
-		else if (pitcher == homeP) {					//입력받은 투수의 투구수가 100을 안넘거나 이닝이 7회 이하가 아니지만 투수가 홈팀투수일 경우
-			if (hRuns > aRuns && inning > 7 && pitcher.pitchCount > 50) {	//홈팀 점수가 어웨이팀 점수보다 많고, 이닝이 8회 이상이며, 투수의 투구수가 50을 넘었다면
+		else if (pitcher == homeP) {
+			if (hRuns > aRuns && inning > 7 && pitcher.pitchCount > 50) {
 				printLog("Pitching Substitution: Closer "+getCloser(home)+" for "+homeP+". "+homeP+" leaves the game with "+((int)homeP.pitchCount)+" pitches.\n");
-														//투수교체 로그 출력, 마무리투수 등판
-				homeP = getCloser(home);				//홈팀 투수를 마무리로 바꿈
-				homeOrder[homeOrder.length-1] = homeP;	//홈팀 타순에 바뀐 투수 추가
-				addHomeField(homeP);					//홈팀 수비에 바뀐 투수 추가
+				homeP = getCloser(home);
+				homeOrder[homeOrder.length-1] = homeP;
+				addHomeField(homeP);
 			}
 		}
-		else {											//입력받은 투수의 투구수가 100을 안넘거나 이닝이 7회 이하가 아니고 투수가 홈팀투수도 아닐 경우 (= 어웨이 투수일 경우)
-			if (aRuns > hRuns && inning > 7) {			//어웨이팀 점수가 홈팀보다 많고 8이닝 이상일 경우, 마무리 등판
+		else {
+			if (aRuns > hRuns && inning > 7) {
 				printLog("Pitching Substitution: Closer "+getCloser(away)+" for "+awayP+". "+awayP+" leaves the game with "+((int)awayP.pitchCount)+" pitches.\n");
-														//투수교체 로그 출력, 홈팀의 경우와 같음
 				awayP = getCloser(home);
 				awayOrder[awayOrder.length-1] =  awayP;
 				addAwayField(awayP);
 			}	
 		}
-		//마무리 이외의 다른 불펜 등판 상황은 위의 선발투수가 7회 이하에서 투구수 100개 이상일 경우에만 교체하게 되있음. 세분화 필요
 	}
 
-	private Player getCloser(Team team) {	//팀을 인수로 입력해 마무리투수를 리턴받음
+	private Player getCloser(Team team) {
 		double max = 0;
 		Player closer = team.bullpen.get(0);
 		for (Player p : team.bullpen) {	//팀의 불펜 배열을 돌려봐서 세이브 가장 많은 사람을 클로저로 올림
