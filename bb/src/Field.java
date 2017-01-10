@@ -24,7 +24,7 @@ public class Field {
 		outs = 0;					//아웃카운트 0으로 초기화
 	}
 
-	public void resetField(Player[] init_field) {	//초기화 함수, 인수로 선수 배열을 받아옴
+	public void resetField(Player[] init_field) {	//필드 초기화 함수, 인수로 선수 배열을 받아옴
 		field = init_field;		//인수로 받아온 선수 배열을 위에서 선언한 변수에 저장
 		clearBasepaths();		//각 루를 비우는 함수
 		outs = 0;				//아웃카운트 0으로 초기화

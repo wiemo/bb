@@ -57,8 +57,8 @@ public class Game {
 		awayP = away.roster.get(awayInts[9]);				//어웨이투수에 투수 할당
 		buildFields();										
 
-		hRuns = aRuns = hSpot = aSpot = 0;
-		inning = 1;
+		hRuns = aRuns = hSpot = aSpot = 0;					//양팀 점수, 타순 0으로 초기화
+		inning = 1;											//1이닝부터 시작
 		
 		printLog("-------------------------------------------------------------------------------------------\n");
 		printLog("Welcome to SimBaseball. Today's game is between the "+home+" and the "+away+"\n");
@@ -67,15 +67,16 @@ public class Game {
 		
 		// outline of game structure
 		
-		Field diamond = new Field(w);
+		Field diamond = new Field(w);						//필드 클래스 변수선언
 
-		while (aRuns == hRuns || inning < 10) {
-			printLog("Top of "+inning+". "+home+": "+hRuns+" "+away+": "+aRuns+"\n\n");
-			checkPitcherForSub(homeP);
-			diamond.resetField(homeField);
-			while ((outsBefore = diamond.getOuts()) < 3) {
-				printLog(awayOrder[aSpot]+" is up to bat.\n");
+		while (aRuns == hRuns || inning < 10) {					//양팀의 점수가 같거나 혹은(or) 9이닝 이하라면 계속 반복
+			printLog("Top of "+inning+". "+home+": "+hRuns+" "+away+": "+aRuns+"\n\n");	//이닝초 양 팀 점수 출력
+			checkPitcherForSub(homeP);							//투수교체 체크
+			diamond.resetField(homeField);						//필드 클리어하고 홈팀 필드 넣음
+			while ((outsBefore = diamond.getOuts()) < 3) {		//아웃 카운트가 2이하일 경우
+				printLog(awayOrder[aSpot]+" is up to bat.\n");	//로그 출력
 				aRuns += diamond.updateField(matchup(homeP, awayOrder[aSpot], calcBattingAdjustment(homeP, awayOrder[aSpot])), awayOrder[aSpot]);
+				//어웨이 팀 점수에 
 				increment_aSpot();
 				if (outsBefore < diamond.getOuts())
 					printLog(""+diamond.getOuts()+" outs!\n");
@@ -122,30 +123,30 @@ public class Game {
 		}
 	}
 
-	private double calcPitchingAdjustment(Player pitcher) {
+	private double calcPitchingAdjustment(Player pitcher) {		//체력에 따른 투수의 스탯감소를 계산
 		return -.05+(pitcher.pitchCount*.001);
 	}
 
 	private int matchup(Player pitcher, Player player, double adjustment) {
-
-		// 	Batter Stats  
-		double SingleAVG = player.singleAVG;
-		double DoubleAVG = player.doubleAVG;
-		double TripleAVG = player.tripleAVG;
-		double HRAVG = player.HRAVG;
-		double BBAVG = player.BBAVG;
-		double SOAVG = player.SOAVG;
-		double HBPAVG = player.HBPAVG;
+		//인수로 투수, 타자, 그리고 타자의 타격확률을 받음. 이 함수는 투수와 타자의 대결을 시뮬레이션하고 결과값을 리턴함
+		// 	Batter Stats, 타자 확률 보정
+		double SingleAVG = player.singleAVG;					//단타율에 타자 단타율 대입, 아래는 다 동일
+		double DoubleAVG = player.doubleAVG;					//2루타율
+		double TripleAVG = player.tripleAVG;					//3루타율
+		double HRAVG = player.HRAVG;							//홈런율
+		double BBAVG = player.BBAVG;							//볼넷율
+		double SOAVG = player.SOAVG;							//삼진율
+		double HBPAVG = player.HBPAVG;							//사구율
 
 		// 	Adjust batting stats with normalized adjustment
-		SingleAVG += (adjustment*(player.singles/player.Hit));
-		DoubleAVG += (adjustment*(player.doubles/player.Hit));
-		TripleAVG += (adjustment*(player.triples/player.Hit));
-		HRAVG += (adjustment*(player.HR/player.Hit));
+		SingleAVG += (adjustment*(player.singles/player.Hit));	//단타율 보정, 아래도 다 보정
+		DoubleAVG += (adjustment*(player.doubles/player.Hit));	//2루타율
+		TripleAVG += (adjustment*(player.triples/player.Hit));	//3루타율
+		HRAVG += (adjustment*(player.HR/player.Hit));			//홈런율
 	
-		// 	Pitcher Stats 
-		double SingleOVA = pitcher.pSingleAVG;
-		double DoubleOVA = pitcher.pDoubleAVG;
+		// 	Pitcher Stats, 투수 확률 보정
+		double SingleOVA = pitcher.pSingleAVG;					//단타율에 투수 단타율 대입, 이하 동일
+		double DoubleOVA = pitcher.pDoubleAVG;					
 		double TripleOVA = pitcher.pTripleAVG;
 		double HROVA = pitcher.pHRAVG;
 		double BBOVA = pitcher.pBBAVG;
@@ -153,16 +154,16 @@ public class Game {
 		double HBPOVA = pitcher.pHBPAVG;
 				
 		// 	Adjust pitching stats according to linear equation based on simulated pitch count
-		double adj = calcPitchingAdjustment(pitcher);
-		SingleOVA += (adj*SingleOVA);
+		double adj = calcPitchingAdjustment(pitcher);	//투구수에 따른 능력치 보정
+		SingleOVA += (adj*SingleOVA);					//위 보정수치를 사용한 보정, 이하 동일
 		DoubleOVA += (adj*DoubleOVA);
 		TripleOVA += (adj*TripleOVA);
 		HROVA += (adj*HROVA);
 		BBOVA += (adj*BBOVA);
 		HBPOVA += (adj*BBOVA);
 
-		// 	League Stats 
-		double lSingleOVA = league.leagueOVASingle;
+		// 	League Stats,	리그 스탯 가져옴
+		double lSingleOVA = league.leagueOVASingle;				//리그 단타율 가져옴. 이하 동일
 		double lDoubleOVA = league.leagueOVADouble;
 		double lTripleOVA = league.leagueOVATriple;
 		double lHROVA = league.leagueOVAHR;
@@ -171,6 +172,9 @@ public class Game {
 		double lHBPOVA = league.leagueOVAHBP;
 
 		// 	Bill James log5 adjusted batter stats
+		//	http://birdsnest.tistory.com/347
+		//	log5 공식 설명
+		//	여기서 스탯 보정에 사용하기위해 투수스탯, 리그스탯을 구함.
 		double aSingleleAVG = adjustStat(SingleAVG, SingleOVA, lSingleOVA);
 		double aDoubleAVG = adjustStat(DoubleAVG, DoubleOVA, lDoubleOVA);
 		double aTripleAVG = adjustStat(TripleAVG, TripleOVA, lTripleOVA);
@@ -192,15 +196,16 @@ public class Game {
 
 		// 	Now sim outcome 
 		//  rand = new Random(System.currentTimeMillis());
-		rand = new Random();
-		double gen = rand.nextDouble();
-		int result;
+		
+		rand = new Random();								//랜덤머신 생성
+		double gen = rand.nextDouble();						//랜덤머신 값을 넣을 더블변수 생성
+		int result;											//리턴할 결과값
 		/*	Code system for result so we can avoid the passing of bulky strings.
 			Each number corresponds to the last variable in the row of its if statement. */
 		if (gen <= aBBAVG)
-			result = WALK;
+			result = WALK;		//젠된 수치가 볼넷수치 이하면 볼넷
 		else if (gen <= aBBAVG+aSingleleAVG)
-			result = SINGLE;
+			result = SINGLE;	//젠된 수치가 볼넷수치이상, 단타수치 이하면 단타. 이하 같은 알고리즘
 		else if (gen <= aBBAVG+aSingleleAVG+aDoubleAVG)
 			result = DOUBLE;
 		else if (gen <= aBBAVG+aSingleleAVG+aDoubleAVG+aTripleAVG)
@@ -211,45 +216,51 @@ public class Game {
 			result = HBP;
 		else if (gen <= aBBAVG+aSingleleAVG+aDoubleAVG+aTripleAVG+aHRAVG+aHBPAVG+aSOAVG)
 			result = STRIKEOUT;
-		else
+		else					//모든 수치 다 이상이면 아웃
 			result = OUT;
-		return result;
+		
+		return result;			//결과값 리턴
 	}
 
-	private void checkPitcherForSub(Player pitcher) {
-		if (pitcher.pitchCount > 100 && inning < 8) {
-			if (pitcher == homeP) {
+	private void checkPitcherForSub(Player pitcher) {	//인수로 투수를 입력받음
+		if (pitcher.pitchCount > 100 && inning < 8) {	//입력받은 투수의 투구수가 100을 넘고, 이닝이 7회 이하라면
+			if (pitcher == homeP) {						//인수로받은 투수가 홈팀 투수라면
 				printLog("Pitching Substitution: "+home.bullpen.get(6)+" for "+homeP+". "+homeP+" leaves the game with "+((int)homeP.pitchCount)+" pitches.\n");
-				homeP = home.bullpen.get(6);
-				homeOrder[homeOrder.length-1] = homeP;
-				addHomeField(homeP);
+														//투수교쳬 : 교체 투수 for 기존 투수 leaves the game with 투구수 pitches 출력
+				homeP = home.bullpen.get(6);			//홈팀 투수는 불펜의 6번째 투수, 1~5까지는 선발투수
+				homeOrder[homeOrder.length-1] = homeP;	//홈팀 타순에서 맨마지막 타순은 홈팀 투수, 지명타자제도 없음
+				addHomeField(homeP);					//홈팀 수비에 바뀐 투수 추가
 			}
-			else {
+			else {										//인수로 받은 투수가 어웨이팀 투수라면
 				printLog("Pitching Substitution: "+away.bullpen.get(6)+" for "+awayP+". "+awayP+" leaves the game with "+((int)awayP.pitchCount)+" pitches.\n");
+														//위와 동일하나 어웨이팀 기준으로 바뀜
 				awayP = away.bullpen.get(6);
 				awayOrder[awayOrder.length-1] =  awayP;
 				addHomeField(homeP);
 			}
 		}
-		else if (pitcher == homeP) {
-			if (hRuns > aRuns && inning > 7 && pitcher.pitchCount > 50) {
+		else if (pitcher == homeP) {					//입력받은 투수의 투구수가 100을 안넘거나 이닝이 7회 이하가 아니지만 투수가 홈팀투수일 경우
+			if (hRuns > aRuns && inning > 7 && pitcher.pitchCount > 50) {	//홈팀 점수가 어웨이팀 점수보다 많고, 이닝이 8회 이상이며, 투수의 투구수가 50을 넘었다면
 				printLog("Pitching Substitution: Closer "+getCloser(home)+" for "+homeP+". "+homeP+" leaves the game with "+((int)homeP.pitchCount)+" pitches.\n");
-				homeP = getCloser(home);
-				homeOrder[homeOrder.length-1] = homeP;
-				addHomeField(homeP);
+														//투수교체 로그 출력, 마무리투수 등판
+				homeP = getCloser(home);				//홈팀 투수를 마무리로 바꿈
+				homeOrder[homeOrder.length-1] = homeP;	//홈팀 타순에 바뀐 투수 추가
+				addHomeField(homeP);					//홈팀 수비에 바뀐 투수 추가
 			}
 		}
-		else {
-			if (aRuns > hRuns && inning > 7) {
+		else {											//입력받은 투수의 투구수가 100을 안넘거나 이닝이 7회 이하가 아니고 투수가 홈팀투수도 아닐 경우 (= 어웨이 투수일 경우)
+			if (aRuns > hRuns && inning > 7) {			//어웨이팀 점수가 홈팀보다 많고 8이닝 이상일 경우, 마무리 등판
 				printLog("Pitching Substitution: Closer "+getCloser(away)+" for "+awayP+". "+awayP+" leaves the game with "+((int)awayP.pitchCount)+" pitches.\n");
+														//투수교체 로그 출력, 홈팀의 경우와 같음
 				awayP = getCloser(home);
 				awayOrder[awayOrder.length-1] =  awayP;
 				addAwayField(awayP);
 			}	
 		}
+		//마무리 이외의 다른 불펜 등판 상황은 위의 선발투수가 7회 이하에서 투구수 100개 이상일 경우에만 교체하게 되있음. 세분화 필요
 	}
 
-	private Player getCloser(Team team) {
+	private Player getCloser(Team team) {	//팀을 인수로 입력해 마무리투수를 리턴받음
 		double max = 0;
 		Player closer = team.bullpen.get(0);
 		for (Player p : team.bullpen) {	//팀의 불펜 배열을 돌려봐서 세이브 가장 많은 사람을 클로저로 올림
