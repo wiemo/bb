@@ -6,9 +6,23 @@ import java.util.Scanner;
 
 public class League {
 
-	int year;
-	double BF, Hit, singles, doubles, triples, HR, BB, SO, HBP;
-	double leagueOVASingle, leagueOVADouble, leagueOVATriple, leagueOVAHR, leagueOVABB, leagueOVASO, leagueOVAHBP;
+	int year;				//¿¬µµ
+	double BF;				//
+	double Hit;
+	double singles;
+	double doubles;
+	double triples;
+	double HR;
+	double BB; 
+	double SO; 
+	double HBP;
+	double leagueOVASingle;
+	double leagueOVADouble;
+	double leagueOVATriple; 
+	double leagueOVAHR;
+	double leagueOVABB; 
+	double leagueOVASO; 
+	double leagueOVAHBP;
 
 	public League() { }
 
