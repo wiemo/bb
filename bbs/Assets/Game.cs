@@ -442,11 +442,16 @@ public class Game : MonoBehaviour {
 
     #region 공용함수
 
+    /// <summary>
+    /// 경기 시뮬레이션을 돌리는 함수
+    /// </summary>
+    /// <param name="init_home">홈팀</param>
+    /// <param name="init_away">어웨이팀</param>
+    /// <param name="init_league">리그</param>
+    /// <param name="homeInts"></param>
+    /// <param name="awayInts"></param>
     public void playGame(Team init_home, Team init_away, League init_league, int[] homeInts, int[] awayInts)
     {
-        //인수로 홈팀, 어웨이팀, 리그, int 배열은 의미 불명
-        //w = new PrintWriter(new File("gamelog.txt"));//파일쓰기
-
         league = init_league;						//인수로 받아온 리그로 리그 할당
 		home = init_home;							//홈팀에 인수로 받은 홈팀 할당
 		homeField = new Player[9];					//홈팀수비에 새로운 선수배열 할당

@@ -2,6 +2,15 @@
 using System.Collections;
 
 public class TeamBuilder : MonoBehaviour {
+
+    public Team buildTeam(string url)
+    {
+
+        return null;
+    }
+
+
+
     /*
 
     Scanner in;

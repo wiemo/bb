@@ -34,7 +34,7 @@ public class Player : MonoBehaviour {
     internal double HRAVG;       //홈런타율
     internal double BBAVG;       //볼넷율
     internal double SOAVG;       //삼진율
-    internal double HBPAVG;		//힛바이피치율
+    internal double HBPAVG;		 //힛바이피치율
 
 
     /*  Pitching Stats  */
